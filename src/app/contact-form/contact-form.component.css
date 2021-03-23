@@ -1,0 +1,42 @@
+form label {
+    display: inline-block;
+    width: 100px;
+  }
+  
+  form div {
+    margin-bottom: 10px;
+  }
+  
+  .error {
+    color: red;
+    margin-left: 5px;
+  }
+  
+  label.error {
+    display: inline;
+  }
+
+  
+#submitButton{
+    text-align: center;
+}
+#submit{
+    width: 100px;
+    height: 40px;
+}
+
+#form{
+    border-color: black;
+    border-radius: 5px;
+    
+}
+
+#reset{
+  width: 100px;
+  height: 40px;
+}
+
+#setvalue{
+  width: 100px;
+  height: 40px;
+}

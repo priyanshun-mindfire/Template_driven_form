@@ -1,0 +1,120 @@
+<form #login="ngForm" (submit)="addCustomer(login)">
+    <fieldset>
+        <div class="details">
+            <div class="orbit">
+                <label for="fname">First Name <span style="color: red;">*</span></label>
+                <input type="text" [(ngModel)]="fname" name="fname" id="fname" required>
+            </div>
+            <!-- <p class="error" id="fnameError" hidden="true">Fill the First Name</p> -->
+            <div class="orbit">
+                <label for="lname">Last Name <span style="color: red;">*</span></label>
+                <input type="text" [(ngModel)]="lname" name="lname" id="lname" required>
+            </div>
+            <!-- <p class="error" id="lnameError" hidden="true">Fill the Last Name </p> -->
+
+            <div class="orbit">
+                <label for="email">Email id <span style="color: red;">*</span></label>
+                <input type="email" [(ngModel)]="email" name="email" id="email" required>
+            </div>
+            <!-- <p class="error" id="emailError" hidden>Fill the email</p> -->
+
+            <div class="orbit">
+                <label for="pan">Pan Number</label>
+                <input type="text" name="pan" id="pan">
+            </div>
+
+            <div class="orbit">
+                <label for="aadhar">Aadhar Number</label>
+                <input type="text" name="aadhar" id="aadhar">
+            </div>
+
+            <div class="orbit">
+                <label for="dob">Date of Birth <span style="color: red;">*</span></label>
+                <input type="date" name="dob" id="dob" required>
+            </div>
+            <!-- <p class="error" id="dobError" hidden>Fill the Date of Birth </p> -->
+            <div class="orbit">
+                <label for="gender">Gender</label>
+                <input type="radio" name="gender" id="male" value="male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="female" value="female">
+                <label for="female">Female</label>
+                <input type="radio" name="gender" id="others" value="others">
+                <label for="others">Others</label>
+            </div>
+            <p class="error" id="genderError" hidden>Select gender </p>
+            <div class="orbit">
+                <label for="Address">Address<span style="color: red;">*</span></label>
+                <textarea [(ngModel)]="Address" name="Address" id="Address" cols="30" rows="5"></textarea>
+            </div>
+            <!-- <p class="error" id="AddressError" hidden>Enter your Address</p> -->
+
+
+
+            <div class="orbit" id="country">
+                <label for="">Country</label> 
+                <select id="input" onchange="random_function()">
+                    <option>select option</option>
+                    <option>INDIA</option>
+                    <option>USA</option>
+                </select>
+            </div>
+
+            <!-- <div class="orbit" id="state">
+                <div>
+                    <label for="">state</label> 
+                    <select id="output" onchange="random_function1()"></select>
+                </div>
+            </div> -->
+
+
+
+            <div class="orbit">
+                <label for="city">City</label>
+                <input type="text" name="city" id="city">
+            </div>
+            <!-- <p class="error" id="cityError" hidden>Enter city name</p> -->
+
+
+            <div class="orbit">
+                <label for="mobile">Mobile no.<span style="color: red;">*</span></label>
+                <input type="number" [(ngModel)]="mobile" name="mobile" id="mobile" required>
+            </div>
+            <!-- <p class="error" id="mobileError" hidden>Enter your phone number</p> -->
+
+            <div class="block_photo">
+                <div class="orbit">
+                    <label for="picture">Employee picture</label>
+                    <input type="file" accept="image/*">
+                </div>
+            </div>
+
+
+            <div class="orbit">
+                <label for="password">Password<span style="color: red;">*</span></label>
+                <input type="password" [(ngModel)]="password" name="password" id="p1" required minlength="6">
+            </div>
+            <div class="orbit">
+                <label for="confirmPassword">Confirm Password<span style="color: red;">*</span></label>
+                <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" id="p2" required minlength="6">
+            </div>
+            <p class="error" id="passwordError" hidden></p>
+
+            <!-- <div class="orbit">
+                <label for="captcha">Captcha<span style="color: red;">*</span></label>
+                <p id="captchaDisplay"></p>
+                <input type="text" name="captcha" id="captcha" required>
+            </div> -->
+
+        </div>
+
+    </fieldset>
+
+
+    <div id="submitButton">
+        <input type="submit" [disabled]="!login.valid" class="btn btn-info" value="submit" id="submit">
+        <input type="reset" class="btn btn-info" (click)=resetForm(login) id="reset">
+        <button (click)=loadValues(login) id="setvalue" >Set value</button>
+    </div>
+    
+</form>
